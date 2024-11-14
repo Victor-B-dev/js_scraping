@@ -1,6 +1,6 @@
 const cheerio = require("cheerio");
 
-const url = "https://books.toscrape.com/catalogue/category/books_1/index.html";
+const url = "https://books.toscrape.com/index.html";
 
 async function getGenres(){
   try {
@@ -16,8 +16,7 @@ async function getGenres(){
     const genres = $('.side_categories li a').map((index, element) => {
       return $(element).text().replace(/\s+/g, ' ').trim();
     }).get();
-    
-    // please note that cheerio only works on static HTML of a page, anything that is dynamically generated will break it, so modern website built on react/etc will actually break
+    // returns an array of all the genres available on the website's main page
 
     console.log('Genres:', genres);
   }
