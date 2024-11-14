@@ -1,6 +1,7 @@
 const cheerio = require("cheerio");
-const { readFileSync, writeFileSync } = require('fs');
-const stringify = require('csv-stringify');
+const fs = require('fs');
+const { writeFileSync } = require('fs')
+const { stringify } = require('csv-stringify/sync');
 
 const url = "https://books.toscrape.com/index.html";
 
@@ -23,11 +24,12 @@ async function getGenres(){
     // .get() converts the Jquery object (unintelligible list) into an regular JS array
 
     // take the genre and change into a csv string
-    const csv = stringify.stringify(genres);
+    const csvString = stringify([['Genre'], ...genres.map(genre => [genre])]);
     // create a new file with the csv information - by default it will overwrite an existing file with the same name
-    writeFileSync('genres.csv', csv);
+    writeFileSync('genres.csv', csvString);
 
-    console.log('Genres:', genres);
+    const csvData = fs.readFileSync('genres.csv', 'utf8');
+    console.log(csvData);
   }
   catch (err){
     console.error('Error in fetch or parse', err);
