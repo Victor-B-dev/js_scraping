@@ -11,8 +11,10 @@ async function getGenre(){
       },
     });
     const html = await response.text()
-    const data = cheerio.load(html);
-    const genre = data("h1").text();
+    const $ = cheerio.load(html); 
+    // typically the converted info is stored as $ because it resembles jQuery, an older framework for HTML document traversal.
+    const genre = $("h1").text();
+    // please note that cheerio only works on static HTML of a page, anything that is dynamically generated will break it, so modern website built on react/etc will actually break
 
     console.log('Genre:', genre)
   }

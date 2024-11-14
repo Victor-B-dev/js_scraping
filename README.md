@@ -5,7 +5,7 @@ Will likely rename the repo/split the technologies for use cases as I figure out
 The three ones in here will be:
 
 Puppeteer
-Cheerio
+Cheerio - only works on static HTML elements - many modern websites will break this because content is dynamically loaded
 Playwright
 
 I'd like to explore Selenium at a later time for Python practice.
