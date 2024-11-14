@@ -24,7 +24,7 @@ async function getGenres(){
 
     // take the genre and change into a csv string
     const csv = stringify.stringify(genres);
-    // create a new file with the csv information
+    // create a new file with the csv information - by default it will overwrite an existing file with the same name
     writeFileSync('genres.csv', csv);
 
     console.log('Genres:', genres);
