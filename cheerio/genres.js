@@ -1,6 +1,6 @@
 const cheerio = require("cheerio");
 const fs = require('fs');
-const { writeFileSync } = require('fs')
+const { writeFileSync } = require('fs');
 const { stringify } = require('csv-stringify/sync');
 
 const url = "https://books.toscrape.com/index.html";
