@@ -1,5 +1,7 @@
 const puppeteer = require("puppeteer");
 
+const url = "https://books.toscrape.com/catalogue/category/books/science-fiction_16/index.html";
+
 async function getGenre(){
   try{
     const browser = puppeteer.launch({headless: false}); // launch browser
