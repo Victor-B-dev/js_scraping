@@ -4,7 +4,8 @@
   "description": "This repository is for learning about using three different web-scraping technologies.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "genre": "node ./puppeteer/genre.js"
   },
   "keywords": [],
   "author": "",
